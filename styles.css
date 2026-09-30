@@ -1,0 +1,176 @@
+:root {
+  --black: #1f1f1f;
+  --white: #ffffff;
+  --background: #f6f5f0;
+  --text: #252525;
+  --muted: #777777;
+  --yellow: #f6c945;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+
+.testimonials {
+  width: min(1000px, 90%);
+  margin: 0 auto;
+  padding: 4rem 0;
+}
+
+h1 {
+  font-size: clamp(2.25rem, 6vw, 4rem);
+  text-align: center;
+}
+
+.intro {
+  margin: 0.5rem 0 3rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.testimonial-card,
+.image-card {
+  border-radius: 1.25rem;
+}
+
+.testimonial-card {
+  padding: 1.75rem;
+}
+
+.dark-card {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.border-card,
+.large-card {
+  border: 2px solid var(--black);
+  background-color: var(--white);
+}
+
+.quote {
+  font-size: 1.1rem;
+}
+
+.person {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-top: 1.75rem;
+}
+
+.person img {
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.person h2,
+.card-content h2 {
+  font-size: 1.1rem;
+}
+
+.person p,
+.role {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.dark-card .person p,
+.dark-card .role {
+  color: #c8c8c8;
+}
+
+.image-card {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  overflow: hidden;
+}
+
+.image-card > img {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  object-fit: cover;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.stars {
+  margin-bottom: 1rem;
+  color: var(--yellow);
+  font-size: 1.4rem;
+  letter-spacing: 0.1rem;
+}
+
+.card-content h2 {
+  font-size: 1.6rem;
+}
+
+.card-content > p:last-child {
+  margin-top: 1.5rem;
+}
+
+.large-card {
+  grid-column: 1 / -1;
+  padding: 3rem;
+  text-align: center;
+}
+
+.large-card .quote {
+  max-width: 650px;
+  margin: auto;
+  font-size: 1.2rem;
+}
+
+.centered-person {
+  justify-content: center;
+}
+
+@media (min-width: 701px) {
+  .image-card {
+    grid-column: 1 / -1;
+    width: calc((100% - 1.5rem) / 2);
+    justify-self: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .image-card {
+    grid-template-columns: 1fr;
+  }
+
+  .image-card > img {
+    height: 300px;
+  }
+
+  .large-card {
+    grid-column: auto;
+    padding: 2rem 1.5rem;
+  }
+}
